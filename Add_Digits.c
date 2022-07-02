@@ -1,5 +1,5 @@
 #include<stdio.h>
-int calculateDigits(int num)
+int calculatedigits(int num)
 {
     int sum=0;
     while(num!=0)
@@ -7,20 +7,20 @@ int calculateDigits(int num)
         sum+=(num%10);
         num/=10;
     }
-    if(sum>=10)
-        calculateDigits(sum);
+    if (sum>=10)
+    calculatedigits(sum);
     else
-        return sum;
+    return sum;
 }
 int main()
 {
     int n,sum;
-    scanf("%d",&n);
-    if(n<0)
-    {
-        return -1;
-    }
-    sum=calculateDigits(n);
-    printf("%d",sum);
-    return 0;
+scanf("%d",&n);
+if(n<0)
+{
+    return-1;
+}
+sum=calculatedigits(n);
+printf("%d",sum);
+return 0;
 }
