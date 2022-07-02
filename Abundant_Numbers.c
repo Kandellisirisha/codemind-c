@@ -1,17 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int n,s=0,i;
-    scanf("%d",&n);
-    for(i=1;i<n;i++)
+    int a;
+    scanf("%d",&a);
+    int sum=0,i;
+    for (i=1; i<a; i++)
     {
-        if(n%i==0)
+        if (a%i==0)
         {
-            s=s+i;
+            sum+=i;
         }
     }
-    if(s>n)
-     printf("True");
+    if (sum>a)
+    {
+        printf("True");
+    }
     else
-     printf("False");
+    {
+        printf("False");
+    }
+    return 0;
 }
