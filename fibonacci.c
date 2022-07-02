@@ -1,15 +1,15 @@
 #include<stdio.h>
 int main()
 {
-    int n1=0,n2=1,n3,i,number;
-    scanf("%d",&number);
-    printf("%d %d",n1,n2);
-    for(i=2;i<number;++i)
-    {
-        n3=n1+n2;
-        printf(" %d",n3);
-        n1=n2;
-        n2=n3;
-    }
-    return 0;
+    int a;
+    scanf("%d",&a);
+    int fa=0,fb=1,temp,i;
+    for (i=0;i<a;i++)
+  {
+      printf("%d ",fa);
+      temp=fa+fb;
+      fa=fb;
+      fb=temp;
+  }
+  return 0;
 }
