@@ -10,9 +10,9 @@ int main()
 for(i=n-1;i>=n/2;i--)
     {
         if(arr[i]%2!=0)
-         {
+        {
            printf("%d",i);
-            break; 
-         }
+           break; 
+        }
     }
 }
