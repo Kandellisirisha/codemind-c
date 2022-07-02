@@ -1,4 +1,4 @@
-#include<stdio.h>
+ #include<stdio.h>
 int main()
 {
     int n,sum=0,mul=1,r;
@@ -15,4 +15,3 @@ int main()
     else
     printf("Not Spy Number");
 }
-
