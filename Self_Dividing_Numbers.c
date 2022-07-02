@@ -1,31 +1,48 @@
 #include<stdio.h>
+int self(int num)
+{
+    int flag=0;
+    int temp=num,r;
+    while (temp>0)
+    {
+        r=temp%10;
+        if (r==0)
+        {
+            flag=0;
+            break;
+        }
+        else
+        {
+            if (num%r==0)
+            {
+                flag=1;
+            }
+            else
+            {
+                flag=0;
+                break;
+            }
+        }
+        temp=temp/10;
+    }
+    if (flag==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 int main()
 {
-    int a,b,i,num,r,temp,sum,count;
+    int a,b;
     scanf("%d%d",&a,&b);
-    for(i=a;i<=b;i++)
+    for (a; a<=b; a++)
     {
-        if(i%10!=0)
+        if (self(a)==1)
         {
-            sum=0,count=0,num=i,temp=i;
-            while(num>0)
-            {
-                r=num%10;
-                sum++;
-                if(r==0)
-                {
-                    break;
-                }
-                if(temp%r==0)
-                {
-                    count++;
-                }
-                num/=10;
-            }
-            if(sum==count)
-            {
-                printf("%d ",i);
-            }
+            printf("%d ",a);
         }
     }
     return 0;
