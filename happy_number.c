@@ -1,24 +1,50 @@
 #include<stdio.h>
-int main()
+#include<math.h>
+int happy(int x)
 {
-    int num;
-    scanf("%d",&num);
-    int sum=0,rem;
-    while(sum!=1&&sum!=4)
+    int sum=0,r,res;
+    while(1>0)
     {
         sum=0;
-        while(num!=0)
+        while (x>0)
+        {
+            r=x%10;
+            sum+=pow(r,2);
+            x=x/10;
+        }
+        if (sum>9)
+        {
+            x=sum;
+            continue;
+        }
+        else
+        {
+            break;
+        }
+    }
+    if (sum==1 || sum==7)
     {
-        rem=num%10;
-        sum+=(rem*rem);
-        num/=10;
+        res=1;
+        return res;
     }
-    num=sum;
+    else
+    {
+        res=0;
+        return res;
     }
-     if(sum==1)
-     printf("True");
-     else
-     printf("False");
-     return 0;
-    
+}
+int main()
+{
+    int a,res;
+    scanf("%d",&a);
+    res=happy(a);
+    if (res==1)
+    {
+        printf("True");
+    }
+    else
+    {
+        printf("False");
+    }
+    return 0;
 }
