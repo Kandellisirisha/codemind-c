@@ -1,27 +1,33 @@
 #include<stdio.h>
 int main()
 {
-    int n,i,a[51],count=0;
-    scanf("%d",&n);
-    a[0]=0;
-    a[1]=1;
-    for(i=1;i<51;i++)
+    int a;
+    scanf("%d",&a);
+    int arr[100],i,fa=0,fb=1,temp;
+    for (i=0;i<100;i++)
     {
-        a[i+1]=a[i]+a[i-1];
+        arr[i]=fa;
+        temp=fa+fb;
+        fa=fb;
+        fb=temp;
     }
-    for(i=0;i<50;i++)
+    int flag=0;
+    for (i=0;i<100;i++)
     {
-        if(a[i]==n)
+        if (arr[i]==a)
         {
-            count++;
+            flag=1;
+            break;
         }
     }
-    if(count==0)
-    {
-        printf("False");
-    }
-    else
+    if (flag==1)
     {
         printf("True");
     }
+    else
+    {
+        printf("False");
+    }
+    return 0;
 }
+    
