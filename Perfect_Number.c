@@ -1,19 +1,21 @@
 #include<stdio.h>
 int main()
 {
-    int n,r,s=0,i;
+    int n,i,sum=0;
     scanf("%d",&n);
-    for(i=1;i<=(n-1);i++)
+    for(i=1;i<n;i++)
     {
-        r=n%i;
-        if(r==0)
+        if(n%i==0)
         {
-            s=s+i;
+            sum = sum+i;
         }
     }
-    if(s==n)
+    if(sum==n)
+    {
         printf("True");
+    }
     else
+    {
         printf("False");
-    return 0;
+    }
 }
