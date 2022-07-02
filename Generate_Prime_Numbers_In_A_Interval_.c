@@ -1,25 +1,23 @@
-#include<stdio.h>
-int main()
+ #include<stdio.h>
+
+
+int   main( )
 {
-    int a,b,i,j,flag;
-    scanf("%d",&a);
-    scanf("%d",&b);
-    for(i=a;i<=b;i++)
-    {
-        if(i==1||i==0)
-        continue;
-        flag=1;
-        for(j=2;j<=i/2;++j)
-        {
-            if(i%j==0)
-            {
-                flag=0;
-                break;
-            }
-        }
-        if(flag==1)
-        printf("%d
-",i);
-    }
-    return 0;
+int   beg, end, f, temp, i, j  ;
+scanf("%d", &beg) ;
+scanf("%d", &end) ;
+for (   j = beg ;  j <= end ;  j++ )
+{
+f = 0 ;
+for (i = 1 ;i < j ;i++) 
+{
+if (j % i == 0)
+f = f + 1 ;
 }
+if (f == 1)
+printf("%d
+",j);
+}
+return 0;
+}
+     
