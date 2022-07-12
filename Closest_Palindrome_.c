@@ -1,54 +1,53 @@
 #include<stdio.h>
-int pal(int num)
-{
-    int rev=0,temp=num,r;
-    while (temp>0)
-    {
-        r=temp%10;
-        rev=(rev*10)+r;
-        temp=temp/10;
-    }
-    if (rev==num)
-    {
-        return 1;
-    }
-    return 0;
-}
 int main()
 {
-    int a;
-    scanf("%d",&a);
-    int diff1=0,diff2=0,i,j;
-    int pal1,pal2;
-    for (i=a+1; i<=10000; i++)
+    int n,i,j,rev=0,r,temp,next,prev,diff;
+    scanf("%d",&n);
+    i=n+1;
+    j=n-1;
+    while(i>0)
     {
-        if (pal(i)==1)
+        rev=0;
+        temp=i;
+        while(temp>0)
         {
-            diff1=i-a;
-            pal1=i;
+            r=temp%10;
+            rev=(rev*10)+r;
+            temp/=10;
+        }
+        if(i==rev)
+        {
+            next=i;
             break;
         }
+        i++;
     }
-    for (i=a-1; i>0; i--)
+    while(j>0)
     {
-        if (pal(i)==1)
+        rev=0;
+        temp=j;
+        while(temp>0)
         {
-            diff2=a-i;
-            pal2=i;
+            r=temp%10;
+            rev=(rev*10)+r;
+            temp/=10;
+        }
+        if(j==rev)
+        {
+            prev=j;
             break;
         }
+        j--;
     }
-    if (diff1>diff2)
+    if(next-n==n-prev)
     {
-        printf("%d",pal2);
-    }
-    else if (diff2==diff1)
+        printf("%d %d",prev,next);
+    }else if(next-n>n-prev)
     {
-        printf("%d %d",pal2,pal1);
-    }
-    else
+        printf("%d",prev);
+    }else
     {
-        printf("%d",pal1);
+        printf("%d",next);
     }
     return 0;
 }
