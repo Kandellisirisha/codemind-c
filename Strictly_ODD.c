@@ -12,7 +12,6 @@ int main()
             if(i%2==0)
             {
                 flag=1;
-                break;
             }
         }
         
